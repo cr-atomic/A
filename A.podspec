@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/cr-atomic/A.git', :tag => s.version.to_s }
 
   s.source_files  = 'A/A/**/*.{h,m}'
-  s.dependency 'B_Category', '~> 0.0.1'
+  s.dependency 'B_Category', '~> 0.0.2'
 end
