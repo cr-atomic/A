@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AViewController.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *testButton = [UIButton new];
+    [testButton setTitle:@"进入AViewController" forState:UIControlStateNormal];
+    [testButton sizeToFit];
+    [testButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    testButton.center = CGPointMake(200, 200);
+    [testButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:testButton];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)buttonAction:(UIButton *)button {
+    UIViewController *vc = [[AViewController alloc] initWithText:@"测试进入显示文字"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
-
-
 @end
